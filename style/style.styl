@@ -1,4 +1,4 @@
-@import url('https//fonts.googleapis.com/css?family=Josefin+Sans400,600,700');
+// @import url('https//fonts.googleapis.com/css?family=Josefin+Sans400,600,700');
 @import url("normalize.css")
 
 $blue = #004DC6
@@ -73,7 +73,6 @@ header
 
 
 #content
-    height 100%
 
     #text-wrapper
         z-index 1
@@ -90,12 +89,21 @@ header
             margin-top 1.5em
 
 #social-links
+    grid-column 2 / span 6
+    @media (min-width $m-screen)
+        grid-column 2 / span 3
+    @media (min-width $l-screen)
+        grid-column 2 / span 2
+
+    z-index 1
     margin-top 48px
-    margin-left -12px
+    display grid
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+
 
     li
         display inline-block
-        margin-right 16px
+        // margin-right 16px
 
     a
         display inline-block
@@ -121,7 +129,6 @@ header
     z-index 1
     display inline-block
     margin-top 24px
-    margin-bottom 64px
     padding 16px 0
     background $blue
     font-size 28px
@@ -137,3 +144,5 @@ header
     @media (min-width 60em)
         grid-column: 5/span 1;
         
+    @media (max-width 40em)
+        display none    
