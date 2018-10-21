@@ -1,0 +1,139 @@
+@import url('https//fonts.googleapis.com/css?family=Josefin+Sans400,600,700');
+@import url("normalize.css")
+
+$blue = #004DC6
+$lighter-blue = #0053D9
+
+$m-screen = 40em
+$l-screen = 60em
+
+*
+  margin 0
+  padding 0
+
+html, body
+    background-color white
+    height 100%
+    // overflow hidden
+    
+
+h1
+h2
+h3
+h4
+h5
+h6
+p
+a
+    font-family 'Josefin Sans', sans-serif;
+
+p
+    font-size 21px;
+    font-weight regular
+    color black
+    line-height 1.5em
+    &::selection
+        background-color #F3F3F3
+        color $blue
+        text-decoration underline
+
+header 
+    width 100%
+    height 136px
+    position absolute
+
+    .logo 
+        width 84px
+        height 84px
+        display inline-block
+        background-image URL("../img/img-logo@2x.png")
+        background-size 84px 84px
+        margin-top 24px
+        grid-column 2
+
+
+.grid
+    display grid
+    grid-template-columns 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 
+    grid-column-gap 0px
+    width 100%
+
+
+#background
+    position absolute
+    z-index 0
+    height 100%
+
+    .column 
+        height 100%
+        border-right 1px solid #F6F6F6
+
+    .columnlast-child
+        border none
+
+
+#content
+    height 100%
+
+    #text-wrapper
+        z-index 1
+        grid-column 2 / span 6
+        margin-top 14em
+
+        @media (min-width $m-screen)
+            grid-column 2 / span 5
+
+        @media (min-width $l-screen)
+            grid-column 2 / span 4
+
+        p
+            margin-top 1.5em
+
+#social-links
+    margin-top 48px
+    margin-left -12px
+
+    li
+        display inline-block
+        margin-right 16px
+
+    a
+        display inline-block
+        width 48px
+        height 48px   
+        background-size 48px 48px
+
+        &:hover
+            opacity .5
+
+    #icn-dribbble
+        background-image URL("../img/icn-dribbble@2x.png")
+    #icn-codepen
+        background-image URL("../img/icn-codepen@2x.png")
+    #icn-medium
+        background-image URL("../img/icn-medium@2x.png")
+    #icn-twitter
+        background-image URL("../img/icn-twitter@2x.png")
+    #icn-instagram
+        background-image URL("../img/icn-instagram@2x.png")
+
+#cta-hi
+    z-index 1
+    display inline-block
+    margin-top 24px
+    margin-bottom 64px
+    padding 16px 0
+    background $blue
+    font-size 28px
+    font-weight 600
+    text-align center
+    color white
+    grid-column: 5/span 3;
+    &:hover
+        background $lighter-blue
+
+    @media (min-width 40em)
+        grid-column: 5/span 2;
+    @media (min-width 60em)
+        grid-column: 5/span 1;
+        

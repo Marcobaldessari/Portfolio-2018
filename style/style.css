@@ -1,0 +1,143 @@
+@import url("https//fonts.googleapis.com/css?family=Josefin+Sans400,600,700");
+@import url("normalize.css");
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  background-color: #fff;
+  height: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  font-family: 'Josefin Sans', sans-serif;
+}
+p {
+  font-size: 21px;
+  font-weight: regular;
+  color: #000;
+  line-height: 1.5em;
+}
+p::selection {
+  background-color: #f3f3f3;
+  color: #004dc6;
+  text-decoration: underline;
+}
+header {
+  width: 100%;
+  height: 136px;
+  position: absolute;
+}
+header .logo {
+  width: 84px;
+  height: 84px;
+  display: inline-block;
+  background-image: URL("../img/img-logo@2x.png");
+  background-size: 84px 84px;
+  margin-top: 24px;
+  grid-column: 2;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 0px;
+  width: 100%;
+}
+#background {
+  position: absolute;
+  z-index: 0;
+  height: 100%;
+}
+#background .column {
+  height: 100%;
+  border-right: 1px solid #f6f6f6;
+}
+#background .columnlast-child {
+  border: none;
+}
+#content {
+  height: 100%;
+}
+#content #text-wrapper {
+  z-index: 1;
+  grid-column: 2/span 6;
+  margin-top: 14em;
+}
+@media (min-width: 40em) {
+  #content #text-wrapper {
+    grid-column: 2/span 5;
+  }
+}
+@media (min-width: 60em) {
+  #content #text-wrapper {
+    grid-column: 2/span 4;
+  }
+}
+#content #text-wrapper p {
+  margin-top: 1.5em;
+}
+#social-links {
+  margin-top: 48px;
+  margin-left: -12px;
+}
+#social-links li {
+  display: inline-block;
+  margin-right: 16px;
+}
+#social-links a {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  background-size: 48px 48px;
+}
+#social-links a:hover {
+  opacity: 0.5;
+}
+#social-links #icn-dribbble {
+  background-image: URL("../img/icn-dribbble@2x.png");
+}
+#social-links #icn-codepen {
+  background-image: URL("../img/icn-codepen@2x.png");
+}
+#social-links #icn-medium {
+  background-image: URL("../img/icn-medium@2x.png");
+}
+#social-links #icn-twitter {
+  background-image: URL("../img/icn-twitter@2x.png");
+}
+#social-links #icn-instagram {
+  background-image: URL("../img/icn-instagram@2x.png");
+}
+#cta-hi {
+  z-index: 1;
+  display: inline-block;
+  margin-top: 24px;
+  margin-bottom: 64px;
+  padding: 16px 0;
+  background: #004dc6;
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  grid-column: 5/span 3;
+}
+#cta-hi:hover {
+  background: #0053d9;
+}
+@media (min-width: 40em) {
+  #cta-hi {
+    grid-column: 5/span 2;
+  }
+}
+@media (min-width: 60em) {
+  #cta-hi {
+    grid-column: 5/span 1;
+  }
+}
