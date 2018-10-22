@@ -45,7 +45,7 @@ header .logo {
 }
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(8, 1fr);
   grid-column-gap: 0px;
   width: 100%;
 }
@@ -84,16 +84,16 @@ header .logo {
   z-index: 1;
   margin-top: 48px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(8, 1fr);
 }
 @media (min-width: 40em) {
   #social-links {
-    grid-column: 2/span 3;
+    grid-column: 2/span 4;
   }
 }
 @media (min-width: 60em) {
   #social-links {
-    grid-column: 2/span 2;
+    grid-column: 2/span 3;
   }
 }
 #social-links li {
@@ -116,6 +116,9 @@ header .logo {
 }
 #social-links #icn-medium {
   background-image: URL("../img/icn-medium@2x.png");
+}
+#social-links #icn-github {
+  background-image: URL("../img/icn-github@2x.png");
 }
 #social-links #icn-twitter {
   background-image: URL("../img/icn-twitter@2x.png");

@@ -54,7 +54,7 @@ header
 
 .grid
     display grid
-    grid-template-columns 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 
+    grid-template-columns repeat(8, 1fr)
     grid-column-gap 0px
     width 100%
 
@@ -91,14 +91,14 @@ header
 #social-links
     grid-column 2 / span 6
     @media (min-width $m-screen)
-        grid-column 2 / span 3
+        grid-column 2 / span 4
     @media (min-width $l-screen)
-        grid-column 2 / span 2
+        grid-column 2 / span 3
 
     z-index 1
     margin-top 48px
     display grid
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+    grid-template-columns: repeat(8, 1fr)
 
 
     li
@@ -120,6 +120,8 @@ header
         background-image URL("../img/icn-codepen@2x.png")
     #icn-medium
         background-image URL("../img/icn-medium@2x.png")
+    #icn-github
+        background-image URL("../img/icn-github@2x.png")
     #icn-twitter
         background-image URL("../img/icn-twitter@2x.png")
     #icn-instagram

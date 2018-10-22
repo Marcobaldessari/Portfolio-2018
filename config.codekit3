@@ -64,6 +64,28 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/img\/icn-github.png": {
+		"ft": 32768,
+		"iS": 1494,
+		"oA": 0,
+		"oAP": "\/img\/icn-github.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/img\/icn-github@2x.png": {
+		"ft": 32768,
+		"iS": 3147,
+		"oA": 0,
+		"oAP": "\/img\/icn-github@2x.png",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"\/img\/icn-instagram.png": {
 		"ft": 32768,
 		"iS": 1019,
