@@ -6,13 +6,13 @@
 	<title>Marco Baldessari</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link href='https//fonts.googleapis.com/css?family=Josefin+Sans400,600,700' rel='stylesheet' type='text/css'>
+	<!-- <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700' rel='stylesheet' type='text/css'> -->
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 	
 </head>
 
 <body>
-
+<!-- 
 	<div class="grid" id="background">
 		<div class="column"></div>
 		<div class="column"></div>
@@ -22,7 +22,7 @@
 		<div class="column"></div>
 		<div class="column"></div>
 		<div class="column"></div>
-	</div>
+	</div> -->
 
 	<header class="grid">
 		<div class="logo"></div>
@@ -31,9 +31,11 @@
 	<div class="grid" id="content">
 		<div id="text-wrapper">
 			<p>Hi! I’m Marco, a digital product designer and Javascript enthusiast with a focus on data-driven interfaces. My approach is a blend of extensive experience, data analysis, functional aesthetics and design thinking.</p>
-			<p>I share my work on Dribbble, experiment on Codepen, and write my experiences on Medium.</p>
+			<p>I share my work on <a href="https://dribbble.com/marcobaldessari" target="_blank">Dribbble</a>, play on <a href="https://codepen.io/marcobaldessari" target="_blank">Codepen</a>, and write my experiences on <a href="https://medium.com/@marco.baldessari" target="_blank">Medium</a>.</p>
 			<p>An Italian living in Istanbul, I’m currently working at Armut and Rahat Taşın on improving conversions and
 				usability through simple and efficient UIs.</p>
+			<!-- <p>I love grid. I love shacking 'em</p> -->
+			<!-- <p>My approach to design stands in the crossroad of extensive experience, data analysis, functional aesthetics and design thinking. </p> -->
 		</div>
 	</div>
 	<div class="grid">
@@ -46,14 +48,19 @@
 			<li><a id="icn-instagram" href="https://www.instagram.com/marcobaldessari" target="_blank"></a></li>
 		</ul>
 	</div>
-	<div class="grid">
+	<!-- <div class="grid">
 		<a id="cta-hi" href="mailto:marco.baldes@gmail.com?subject=Hi buddy" target="_blank">Say hi!</a>
-	</div>
+	</div> -->
 
 
-	<script src="js/hidpi-canvas.min.js"></script>
-	<script src="js/glitch.js"></script>
-
+	<!-- <script src="js/hidpi-canvas.min.js"></script> -->
+	<!-- <script src="js/glitch.js"></script> -->
+	<canvas id="canvas"></canvas>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenLite.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/ColorPropsPlugin.min.js"></script>
+    <script src="js/dat.gui.min.js"></script>
+    <script src="js/elastic-grid.js"></script>
 </body>
 
 </html>

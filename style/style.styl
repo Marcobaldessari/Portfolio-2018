@@ -1,8 +1,12 @@
-// @import url('https//fonts.googleapis.com/css?family=Josefin+Sans400,600,700');
+// @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text');
+
 @import url("normalize.css")
 
 $blue = #004DC6
 $lighter-blue = #0053D9
+$text-blue = #001F4F
+$yellow = #F8E71C
 
 $m-screen = 40em
 $l-screen = 60em
@@ -25,12 +29,14 @@ h5
 h6
 p
 a
-    font-family 'Josefin Sans', sans-serif;
+    // font-family 'Josefin Sans', sans-serif;
+    font-family "Crimson Text", serif;
 
 p
-    font-size 21px;
+    font-size 22px;
     font-weight regular
     color black
+    color $text-blue
     line-height 1.5em
     &::selection
         background-color #F3F3F3
@@ -41,17 +47,22 @@ header
     width 100%
     height 136px
     position absolute
+    z-index 1
 
     .logo 
-        width 84px
-        height 84px
+        width 12.5vw
+        height 12.5vw
         display inline-block
         background-image URL("../img/img-logo@2x.png")
-        background-size 84px 84px
+        background-size 12.5vw 12.5vw
         margin-top 24px
         grid-column 2
 
-
+        @media(min-width $m-screen)
+            width 84px
+            height 84px 
+            background-image URL("../img/img-logo@2x.png")
+            background-size 84px 84px
 .grid
     display grid
     grid-template-columns repeat(8, 1fr)
@@ -77,8 +88,9 @@ header
     #text-wrapper
         z-index 1
         grid-column 2 / span 6
-        margin-top 14em
-
+        margin-top 6em
+        @media (min-width $m-screen)
+            margin-top 14em
         @media (min-width $m-screen)
             grid-column 2 / span 5
 
@@ -87,6 +99,28 @@ header
 
         p
             margin-top 1.5em
+            z-index 3
+        a   
+            color black
+            position relative
+            display inline-block
+            z-index 3
+            
+            &::before
+                content ""
+                display block
+                position absolute
+                width 100%
+                top 55%
+                height 25%
+                background-color $yellow
+                z-index -1
+                transition: all .1s ease-out
+
+            &:hover:before
+                top -10%
+                height 110% 
+
 
 #social-links
     grid-column 2 / span 6
@@ -148,3 +182,12 @@ header
         
     @media (max-width 40em)
         display none    
+
+#canvas 
+    position fixed
+    top 0
+    left 0
+    z-index 0
+
+.dg
+    z-index 99 !important

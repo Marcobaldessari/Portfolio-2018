@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Crimson+Text");
 @import url("normalize.css");
 * {
   margin: 0;
@@ -16,12 +17,13 @@ h5,
 h6,
 p,
 a {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Crimson Text", serif;
 }
 p {
-  font-size: 21px;
+  font-size: 22px;
   font-weight: regular;
   color: #000;
+  color: #001f4f;
   line-height: 1.5em;
 }
 p::selection {
@@ -33,15 +35,24 @@ header {
   width: 100%;
   height: 136px;
   position: absolute;
+  z-index: 1;
 }
 header .logo {
-  width: 84px;
-  height: 84px;
+  width: 12.5vw;
+  height: 12.5vw;
   display: inline-block;
   background-image: URL("../img/img-logo@2x.png");
-  background-size: 84px 84px;
+  background-size: 12.5vw 12.5vw;
   margin-top: 24px;
   grid-column: 2;
+}
+@media (min-width: 40em) {
+  header .logo {
+    width: 84px;
+    height: 84px;
+    background-image: URL("../img/img-logo@2x.png");
+    background-size: 84px 84px;
+  }
 }
 .grid {
   display: grid;
@@ -64,7 +75,12 @@ header .logo {
 #content #text-wrapper {
   z-index: 1;
   grid-column: 2/span 6;
-  margin-top: 14em;
+  margin-top: 6em;
+}
+@media (min-width: 40em) {
+  #content #text-wrapper {
+    margin-top: 14em;
+  }
 }
 @media (min-width: 40em) {
   #content #text-wrapper {
@@ -78,6 +94,28 @@ header .logo {
 }
 #content #text-wrapper p {
   margin-top: 1.5em;
+  z-index: 3;
+}
+#content #text-wrapper a {
+  color: #000;
+  position: relative;
+  display: inline-block;
+  z-index: 3;
+}
+#content #text-wrapper a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 55%;
+  height: 25%;
+  background-color: #f8e71c;
+  z-index: -1;
+  transition: all 0.1s ease-out;
+}
+#content #text-wrapper a:hover:before {
+  top: -10%;
+  height: 110%;
 }
 #social-links {
   grid-column: 2/span 6;
@@ -155,4 +193,13 @@ header .logo {
   #cta-hi {
     display: none;
   }
+}
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.dg {
+  z-index: 99 !important;
 }
