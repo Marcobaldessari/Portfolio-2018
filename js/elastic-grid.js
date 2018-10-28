@@ -10,7 +10,7 @@ var canvas = document.getElementById('canvas'),
 
 options = {
     "line_default_color": "#f2f2f2",
-    "line_active_color": "#787878",
+    "line_active_color": "#0c51c3",
     "bg_color": "#FFFFFF",
     "columns": 16,
     "resolution": 22.589178011373427,
@@ -23,28 +23,28 @@ options = {
     "click_strength": 1000
 }
 
-// var gui = new dat.GUI({ load: getPresetJSON(), preset: 'folio' });
+var gui = new dat.GUI({ load: getPresetJSON(), preset: 'folio' });
 
-// var folder_colors = gui.addFolder('Colors');
-// var folder_wave = gui.addFolder('Wave');
-// gui.remember(options);
+var folder_colors = gui.addFolder('Colors');
+var folder_wave = gui.addFolder('Wave');
+gui.remember(options);
 
-// folder_colors.addColor(options, 'line_default_color');
-// folder_colors.addColor(options, 'line_active_color');
-// folder_colors.addColor(options, 'bg_color');
-// var controller_resolution = folder_wave.add(options, 'columns', 1, 100).step(1);
-// var controller_columns = folder_wave.add(options, 'resolution', 5, 300).step(1);
-// var controller_grid_width = folder_wave.add(options, 'grid_width', 1, 200);
-// folder_wave.add(options, 'tension', 0.01, 1);
-// folder_wave.add(options, 'dampen', 0.002, 0.2);
-// folder_wave.add(options, 'k', 0.0025, 0.110);
-// folder_wave.add(options, 'mouse_influence', .5, 4);
-// folder_wave.add(options, 'click', ['off', 'random', 'targeted']);
-// folder_wave.add(options, 'click_strength', 100, 5000);
-// controller_resolution.onChange(createGrid);
-// controller_columns.onChange(createGrid);
-// controller_grid_width.onChange(createGrid);
-// // gui.close();
+folder_colors.addColor(options, 'line_default_color');
+folder_colors.addColor(options, 'line_active_color');
+folder_colors.addColor(options, 'bg_color');
+var controller_resolution = folder_wave.add(options, 'columns', 1, 100).step(1);
+var controller_columns = folder_wave.add(options, 'resolution', 5, 300).step(1);
+var controller_grid_width = folder_wave.add(options, 'grid_width', 1, 200);
+folder_wave.add(options, 'tension', 0.01, 1);
+folder_wave.add(options, 'dampen', 0.002, 0.2);
+folder_wave.add(options, 'k', 0.0025, 0.110);
+folder_wave.add(options, 'mouse_influence', .5, 4);
+folder_wave.add(options, 'click', ['off', 'random', 'targeted']);
+folder_wave.add(options, 'click_strength', 100, 5000);
+controller_resolution.onChange(createGrid);
+controller_columns.onChange(createGrid);
+controller_grid_width.onChange(createGrid);
+// gui.close();
 
 createGrid();
 animate();
@@ -257,9 +257,9 @@ function getPresetJSON() {
             "folio": {
                 "0": {
                     "line_default_color": "#f2f2f2",
-                    "line_active_color": "#787878",
+                    "line_active_color": "#0c51c3",
                     "bg_color": "#FFFFFF",
-                    "columns": 7.994657935550578,
+                    "columns": 16,
                     "resolution": 22.589178011373427,
                     "grid_width": 1,
                     "tension": 0.1672945028433569,
