@@ -23,31 +23,36 @@ options = {
     "click_strength": 1000
 }
 
-var gui = new dat.GUI({ load: getPresetJSON(), preset: 'folio' });
+// var gui = new dat.GUI({ load: getPresetJSON(), preset: 'folio' });
 
-var folder_colors = gui.addFolder('Colors');
-var folder_wave = gui.addFolder('Wave');
-gui.remember(options);
+// var folder_colors = gui.addFolder('Colors');
+// var folder_wave = gui.addFolder('Wave');
+// gui.remember(options);
 
-folder_colors.addColor(options, 'line_default_color');
-folder_colors.addColor(options, 'line_active_color');
-folder_colors.addColor(options, 'bg_color');
-var controller_resolution = folder_wave.add(options, 'columns', 1, 100).step(1);
-var controller_columns = folder_wave.add(options, 'resolution', 5, 300).step(1);
-var controller_grid_width = folder_wave.add(options, 'grid_width', 1, 200);
-folder_wave.add(options, 'tension', 0.01, 1);
-folder_wave.add(options, 'dampen', 0.002, 0.2);
-folder_wave.add(options, 'k', 0.0025, 0.110);
-folder_wave.add(options, 'mouse_influence', .5, 4);
-folder_wave.add(options, 'click', ['off', 'random', 'targeted']);
-folder_wave.add(options, 'click_strength', 100, 5000);
-controller_resolution.onChange(createGrid);
-controller_columns.onChange(createGrid);
-controller_grid_width.onChange(createGrid);
+// folder_colors.addColor(options, 'line_default_color');
+// folder_colors.addColor(options, 'line_active_color');
+// folder_colors.addColor(options, 'bg_color');
+// var controller_resolution = folder_wave.add(options, 'columns', 1, 100).step(1);
+// var controller_columns = folder_wave.add(options, 'resolution', 5, 300).step(1);
+// var controller_grid_width = folder_wave.add(options, 'grid_width', 1, 200);
+// folder_wave.add(options, 'tension', 0.01, 1);
+// folder_wave.add(options, 'dampen', 0.002, 0.2);
+// folder_wave.add(options, 'k', 0.0025, 0.110);
+// folder_wave.add(options, 'mouse_influence', .5, 4);
+// folder_wave.add(options, 'click', ['off', 'random', 'targeted']);
+// folder_wave.add(options, 'click_strength', 100, 5000);
+// controller_resolution.onChange(createGrid);
+// controller_columns.onChange(createGrid);
+// controller_grid_width.onChange(createGrid);
 // gui.close();
 
-createGrid();
-animate();
+window.setTimeout(function () {
+    createGrid();
+    animate();
+}, 1500);
+
+// createGrid();
+// animate();
 
 function createGrid() {
     w = window.innerWidth;
@@ -159,7 +164,7 @@ function cursorMove(e) {
         mouse.y = e.clientY - bounds.top;
     }
     mouse.speedx = mouse.x - mouse.previousx;
-    if(touchStop > 300) {
+    if (touchStop > 300) {
         mouse.speedx = 10
     }
     mouse.segment = Math.floor((options.resolution / h) * mouse.y);
@@ -187,7 +192,7 @@ function cursorMove(e) {
 
 window.addEventListener("mousemove", cursorMove);
 window.addEventListener("touchmove", cursorMove);
-window.addEventListener("touchend", function() {
+window.addEventListener("touchend", function () {
     touchStop = Date.now() - start;
 });
 

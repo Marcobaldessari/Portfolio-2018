@@ -15,6 +15,12 @@ $l-screen = 60em
   margin 0
   padding 0
 
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
 html, body
     background-color white
     height 100%
@@ -31,6 +37,10 @@ p
 a
     // font-family 'Josefin Sans', sans-serif;
     font-family "Crimson Text", serif;
+    &::selection
+        background-color #F3F3F3
+        color $blue
+        text-decoration underline
 
 p
     font-size 22px;
@@ -38,10 +48,7 @@ p
     color black
     color $text-blue
     line-height 1.5em
-    &::selection
-        background-color #F3F3F3
-        color $blue
-        text-decoration underline
+    
 
 header 
     width 100%
@@ -68,6 +75,50 @@ header
     grid-template-columns repeat(8, 1fr)
     grid-column-gap 0px
     width 100%
+
+.hidden {
+	position: absolute;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	pointer-events: none;
+}
+
+
+.js .loading::before {
+	content: '';
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background: #fff;
+}
+
+.js .loading::after {
+	content: '';
+	position: fixed;
+	z-index: 10000;
+	top: 50%;
+	left: 50%;
+	width: 50px;
+	height: 50px;
+	margin: -25px 0 0 -25px;
+	pointer-events: none;
+	background:$blue;
+	animation: loaderAnim 0.8s ease-out infinite alternate forwards;
+}
+
+@keyframes loaderAnim {
+	to {
+		transform: translate3d(0,-100px,0);
+	}
+}
+
+
 
 
 #background
@@ -123,17 +174,18 @@ header
 
 
 #social-links
+    position relative
     grid-column 2 / span 6
     @media (min-width $m-screen)
         grid-column 2 / span 4
     @media (min-width $l-screen)
-        grid-column 2 / span 3
+        grid-column 2 / span 4
 
     z-index 1
     margin-top 48px
     display grid
     grid-template-columns: repeat(8, 1fr)
-
+    text-align center
 
     li
         display inline-block
@@ -179,6 +231,11 @@ header
     #icn-instagram
         background-image URL("../img/icn-instagram@2x.png")
 
+    @media (max-width 40em) 
+        #social-codepen, #social-github
+            display none
+
+
 #cta-hi
     z-index 1
     display inline-block
@@ -207,5 +264,19 @@ header
     left 0
     z-index 0
 
-.dg
+.dg     //  <-- elastic-grid.js options
     z-index 99 !important
+    // display none
+
+
+.block-revealer__element {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	pointer-events: none;
+	opacity: 0;
+    z-index 10
+}
