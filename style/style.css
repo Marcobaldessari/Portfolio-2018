@@ -272,16 +272,59 @@ header .logo {
 .dg {
   z-index: 99 !important;
 }
-.block-revealer__element {
+#preloader {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+  z-index: 100;
+}
+#preloader.loaded {
+  display: none;
+}
+#preloader:before {
+  content: "";
+  background: #d7d7d7;
+  height: 3px;
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#preloader::after {
+  content: "";
+  background: #004fc1;
+  height: 3px;
+  width: 50%;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: loading 2s ease-in-out forwards;
+  transform-origin: 0 50%;
+}
+.revealer {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 0;
   height: 100%;
-  background: #000;
   pointer-events: none;
-  opacity: 0;
-  z-index: 10;
+  opacity: 1;
+}
+.revealer#block-1 {
+  background: #e3e3e3;
+  z-index: 1001;
+}
+.revealer#block-2 {
+  background: #004dc6;
+  z-index: 1002;
+}
+.revealer#block-3 {
+  background: #e3e3e3;
+  z-index: 1001;
 }
 @-moz-keyframes loaderAnim {
   to {
@@ -301,5 +344,49 @@ header .logo {
 @keyframes loaderAnim {
   to {
     transform: translate3d(0, -100px, 0);
+  }
+}
+@-moz-keyframes loading {
+  0% {
+    transform: translateX(-50%) scaleX(0);
+  }
+  50% {
+    transform: translateX(-50%) scaleX(0.3);
+  }
+  100% {
+    transform: translateX(-50%) scaleX(1);
+  }
+}
+@-webkit-keyframes loading {
+  0% {
+    transform: translateX(-50%) scaleX(0);
+  }
+  50% {
+    transform: translateX(-50%) scaleX(0.3);
+  }
+  100% {
+    transform: translateX(-50%) scaleX(1);
+  }
+}
+@-o-keyframes loading {
+  0% {
+    transform: translateX(-50%) scaleX(0);
+  }
+  50% {
+    transform: translateX(-50%) scaleX(0.3);
+  }
+  100% {
+    transform: translateX(-50%) scaleX(1);
+  }
+}
+@keyframes loading {
+  0% {
+    transform: translateX(-50%) scaleX(0);
+  }
+  50% {
+    transform: translateX(-50%) scaleX(0.3);
+  }
+  100% {
+    transform: translateX(-50%) scaleX(1);
   }
 }

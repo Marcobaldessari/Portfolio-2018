@@ -1,19 +1,5 @@
-window.onload = function () {
-    var blocks = [];
-    blocks = document.querySelectorAll(".block-animate");
-
-    setTimeout(function(){
-        for(var i = 0; i < blocks.length; i++) {
-            blocks[i].classList.add("on");
-        }
-    }, 1000);
-
-
-
-    // blocks = window.getComputedStyle(
-    //     document.querySelectorAll('.block-animate'), ':after'
-    // ).getPropertyValue('width');
-    
- 
-
-}
+// @codekit-prepend "ColorPropsPlugin.min.js"
+// @codekit-prepend "TweenMax.js"
+// @codekit-prepend "dat.gui.min.js"
+// @codekit-prepend "elastic-grid.js"
+// @codekit-prepend "fakePreloader.js"
