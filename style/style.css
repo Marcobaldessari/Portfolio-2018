@@ -113,6 +113,10 @@ header .logo {
   position: relative;
   display: inline-block;
   z-index: 3;
+  transition: 0.3s all;
+}
+#content #text-wrapper a:hover {
+  transform: translate(5px, -5px);
 }
 #content #text-wrapper a::before {
   content: "";

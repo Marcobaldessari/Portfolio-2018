@@ -111,7 +111,11 @@ header
             position relative
             display inline-block
             z-index 3
+            transition .3s all
             
+            &:hover
+                transform translate(5px,-5px)
+
             &::before
                 content ""
                 display block
