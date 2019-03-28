@@ -1,5 +1,6 @@
 window.setTimeout(function () {
     document.querySelector("#preloader").classList.add("loaded")
+    document.querySelector("#main").classList.add("loaded")
 }, 3000)
 
 window.setTimeout(function () {
